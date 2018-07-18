@@ -23,7 +23,7 @@ import java.util.List;
 @Slf4j
 public class OrderServiceImplTest {
     private final String BUYER_OPENID ="110110";
-    private final String ORDER_ID ="1529920307713658358";
+    private final String ORDER_ID ="1531927353103251616";
     @Autowired
     private  OrderServiceImpl orderService;
     @Test
