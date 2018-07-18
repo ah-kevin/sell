@@ -7,6 +7,7 @@ import com.lennon.sell.enums.PayStatusEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.Result;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,11 +22,10 @@ import java.util.List;
 @SpringBootTest
 @Slf4j
 public class OrderServiceImplTest {
-    private final String BUYER_OPENID = "110110";
-    private final String ORDER_ID = "1529849721261234675";
+    private final String BUYER_OPENID ="110110";
+    private final String ORDER_ID ="1529920307713658358";
     @Autowired
-    private OrderServiceImpl orderService;
-
+    private  OrderServiceImpl orderService;
     @Test
     public void create() {
         OrderDTO orderDTO = new OrderDTO();
@@ -45,15 +45,16 @@ public class OrderServiceImplTest {
         orderDetailList.add(orderDetail2);
         orderDTO.setOrderDetailList(orderDetailList);
         OrderDTO result = orderService.create(orderDTO);
-        log.info("[创建订单] result ={}", result);
+        log.info("[创建订单] result ={}",result);
         Assert.assertNotNull(result);
     }
 
     @Test
     public void findOne() {
         OrderDTO result = orderService.findOne(ORDER_ID);
-        log.info("查询某个订单 result ={}", result);
-        Assert.assertEquals(ORDER_ID, result.getOrderId());
+        log.info("[查询某个订单result={}]",result);
+        Assert.assertEquals(ORDER_ID,result.getOrderId());
+
     }
 
     @Test
