@@ -2,8 +2,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password: iflytek
-    url: jdbc:mysql://192.168.76.61:3306/sell?characterEncoding=utf-8&&useSSL=false
+    password: 890728
+    url: jdbc:mysql://localhost:3306/sell?characterEncoding=utf-8&&useSSL=false
   jpa:
     show-sql: true
   jackson:
@@ -14,3 +14,6 @@ server:
 #  pattern:
 #    console: "%d - %msg%n"
 #  file: ./log/tomcat/sell.log
+wechat:
+  mpAppId: wxcbf82312c9f20100
+  mpAppSecret: 620041ab50ad3acc4a1d3f5e6c56214b
