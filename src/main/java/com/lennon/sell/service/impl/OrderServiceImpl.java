@@ -13,6 +13,7 @@ import com.lennon.sell.exception.SellException;
 import com.lennon.sell.repository.OrderDetailRepository;
 import com.lennon.sell.repository.OrderMasterRepository;
 import com.lennon.sell.service.OrderService;
+import com.lennon.sell.service.PayService;
 import com.lennon.sell.service.ProductService;
 import com.lennon.sell.utils.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -43,6 +44,8 @@ public class OrderServiceImpl  implements OrderService {
     @Autowired
     private OrderMasterRepository orderMasterRepository;
 
+    @Autowired
+    private PayService payService;
     @Override
     @Transactional
     public OrderDTO create(OrderDTO orderDTO) {
@@ -133,7 +136,7 @@ public class OrderServiceImpl  implements OrderService {
         productService.increaseStock(cartDTOList);
         // 如果已支付,需要退款
         if(orderDTO.getPayStatus().equals(PayStatusEnum.SUCCESS.getCode())){
-            // TODO 退款
+            payService.refund(orderDTO);
         }
         return orderDTO;
     }

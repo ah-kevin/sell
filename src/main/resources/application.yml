@@ -17,3 +17,7 @@ server:
 wechat:
   mpAppId: wxcbf82312c9f20100
   mpAppSecret: 620041ab50ad3acc4a1d3f5e6c56214b
+  mchId: 1508474631
+  mchKey: Q98Fn7ZPLMgcTYrdZ2NCrFmHqDyxR23c
+  keyPath: /Users/lennon/Dropbox/cert/apiclient_cert.p12
+  notifyUrl: http://bjke.s1.natapp.cc/sell/pay/notify
